@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fala, Povo!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Solicitação Online de Serviços</h1>
+    </header>
+    <main>
+        <form id="formSolicitacao">
+            <fieldset>
+                <legend>Identificação</legend>
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                <br>
+                <label for="email">E-mail: </label>
+                <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required>
+                <br>
+                <label for="telefone">Telefone: </label>
+                <input type="tel" id="telefone" name="telefone" maxlength="15" placeholder="(99) 99999-9999" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Categoria do Serviço</legend>
+                <label>Categoria:
+                    <select id="categoria" required>
+                        <option>Selecione uma categoria</option>
+                        <option>Buraco(s) na rua</option>
+                        <option>Calçada danificada</option>
+                        <option>Falta de acessibilidade para pessoas com deficiência</option>
+                        <option>Falta de semáforo</option>
+                        <option>Mau funcionamento de semáforo</option>
+                        <option>Ponto de ônibus em más condições</option>
+                        <option>Falta de sinalização ou placa de trânsito danificada</option>
+                        <option>Poste com lâmpadas queimadas ou danificadas</option>
+                        <option>Área sem iluminação adequada</option>
+                        <option>Acúmulo de lixo e entulho em local inadequado</option>
+                        <option>Bueiro entupido</option>
+                        <option>Falta de coleta seletiva de lixo</option>
+                        <option>Árvore caída ou galhos que ameaçam cair</option>
+                        <option>Esgoto a céu aberto ou vazamentos de água</option>
+                        <option>Queima irregular de lixo e materiais tóxicos</option>
+                        <option>Denúncia de terrenos abandonados, servindo como focos de dengue e criadouros de pragas
+                        </option>
+                        <option>Outros</option>
+                    </select>
+                </label>
+                <br>
+                <label>Descrição:
+                    <textarea id="descricao" minlength="20" maxlength="5000"
+                        placeholder="Descreva o problema ou solicitação..." required></textarea>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Localização</legend>
+                <label for="cep">CEP: </label><input type="text" id="cep" placeholder="Digite o CEP" required>
+                <label for="logradouro">Logradouro: </label><input type="text" id="logradouro"
+                    placeholder="Rua, Av, etc." readonly>
+                <label for="numero">Número: </label><input type="number" id="numero" placeholder="Número" required>
+                <label for="bairro">Bairro: </label><input type="text" id="bairro" placeholder="Bairro" readonly>
+                <label for="cidade">Cidade: </label><input type="text" id="cidade" placeholder="Cidade" readonly>
+                <label for="uf">UF:
+                    <select id="uf" required>
+                        <option value="">Selecione</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </label>
+                <label for="referencia">Referência: </label><input type="text" id="referencia"
+                    placeholder="Ex: Próximo ao supermercado">
+            </fieldset>
+
+            <fieldset>
+                <legend>Anexos</legend>
+                <input type="file" id="anexo" accept=".jpg,.jpeg,.png,.mp4,.rar,.zip" max-size="10485760" multiple>
+                <p>*Formatos de arquivo aceitos: JPG, JPEG, PNG, MP4, RAR e ZIP. Tamanho máximo permitido: 10 MB.</p>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Cancelar</button>
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
